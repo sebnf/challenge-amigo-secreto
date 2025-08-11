@@ -43,7 +43,7 @@ function mostrarListaAmigos() {
 function sortearAmigo() {
 
     //1. Verifica que el array nombres no está vacío.
-    if (nombres === "") {
+    if (nombres.length <= 1) {
         alert("Ingresa al menos 2 amigos");
     } else {
         //2. Sortea una posición al azar en el array nombres.
