@@ -38,3 +38,20 @@ function mostrarListaAmigos() {
         lista.appendChild(li);
     });
 }
+
+//Sorteará un amigo dentro de la lista de manera aleatoria.
+function sortearAmigo() {
+
+    //1. Verifica que el array nombres no está vacío.
+    if (nombres === "") {
+        alert("Ingresa al menos 2 amigos");
+    } else {
+        //2. Sortea una posición al azar en el array nombres.
+        let resultado = Math.floor(Math.random()*nombres.length);
+
+        //3. Muestra el resultado
+        let sorteo = document.querySelector("#resultado");
+        sorteo.innerHTML = nombres[resultado];
+    }
+
+}
