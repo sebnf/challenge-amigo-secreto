@@ -1,20 +1,40 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let nombres = [];
 
+//Al añadir un amigo se agregará al array nombres y limpiará la entrada.
 function agregarAmigo(){
 
-    //Capturar nombre amigo secreto en la entrada texto
+    //1. Capturar nombre amigo secreto en la entrada texto.
     let nombreIngresado = document.querySelector("#amigo").value;
 
     console.log(`Nombre ingresado: ${nombreIngresado}`);
 
-    //Mostrar alerta si no se ingresó un nombre, si no, actualizar array nombres
-    if (nombreIngresado === ''){
-        alert('Ingresa un nombre válido');
+    //2. Mostrar alerta si no se ingresó un nombre, si no, actualizar array nombres.
+    if (nombreIngresado === ""){
+        alert("Ingresa un nombre válido");
     } else {
         nombres.push(nombreIngresado);
         console.log(`Nombres en array: ${nombres}`);
     }
-    //Limpiar campo de entrada
+    //3. Limpiar campo de entrada, lo 'reinicia'.
     document.getElementById("amigo").value = '';
+    mostrarListaAmigos();
+}
+
+
+//Muestra en una lista los amigos que se van a agregando.
+function mostrarListaAmigos() {
+
+    //1. Selecciona la lista
+    let lista = document.querySelector("#listaAmigos");
+
+    //2. Limpia la lista
+    lista.innerHTML = "";
+
+    //3. Función for recorre el array nombres para agregar cada nombre a una lista que el usuario ve.
+    nombres.forEach (function(nombre){
+        let li = document.createElement("li");
+        li.textContent = nombre;
+        lista.appendChild(li);
+    });
 }
