@@ -7,14 +7,11 @@ function agregarAmigo(){
     //1. Capturar nombre amigo secreto en la entrada texto.
     let nombreIngresado = document.querySelector("#amigo").value;
 
-    console.log(`Nombre ingresado: ${nombreIngresado}`);
-
     //2. Mostrar alerta si no se ingresó un nombre, si no, actualizar array nombres.
     if (nombreIngresado === ""){
         alert("Ingresa un nombre válido");
     } else {
         nombres.push(nombreIngresado);
-        console.log(`Nombres en array: ${nombres}`);
     }
     //3. Limpiar campo de entrada, lo 'reinicia'.
     document.getElementById("amigo").value = '';
